@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .contact-container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            padding: 40px 0;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="admin.html" style="font-family: 'Roboto', sans-serif; font-weight: bold;">
+            AI Solutions
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="Services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="Projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="Feedback.html">Feedback</a></li>
+                <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Contact Us Section -->
+<div class="contact-container">
+    <h2>Contact Us</h2>
+    <div class="card">
+        <form id="contactForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Your Phone Number</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="jobTitle" class="form-label">Job Title</label>
+                <input type="text" class="form-control" id="jobTitle" placeholder="Enter your job title" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="company" class="form-label">Company</label>
+                <input type="text" class="form-control" id="company" placeholder="Enter your company name" required>
+            </div>
+
+            <!-- Country Selection -->
+            <div class="mb-3">
+                <label for="country" class="form-label">Country</label>
+                <select class="form-select" id="country" required>
+                    <option value="">Select your country</option>
+                    <option value="United States">United States</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                    <option value="India">India</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Japan">Japan</option>
+                    <option value="China">China</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="form-label">What do you want to ask?</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Write your message here" required></textarea>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2025 AI Solutions. All Rights Reserved.</p>
+    <p>Address: 1197, 35 Bang Na-Trat 37 Alley, Bang Na Nuea, Bang Na, Bangkok 10260</p>
+    <p>Email: <a href="mailto:aisolution@gmail.com" class="text-white">aisolution@gmail.com</a></p>
+    <p>Phone: <a href="tel:+85943894734" class="text-white">+85 943894734</a></p>
+</footer>
+
+<!-- Firebase SDK -->
+<script type="module">
+    // Import Firebase SDK
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+    import { getDatabase, ref, push, set, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+
+    // Firebase Configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyA_6TuJH9Rv5Gknj8u1fM01LBCq2KawO74",
+        authDomain: "aisolution-6495d.firebaseapp.com",
+        databaseURL: "https://aisolution-6495d-default-rtdb.firebaseio.com",
+        projectId: "aisolution-6495d",
+        storageBucket: "aisolution-6495d.appspot.com",
+        messagingSenderId: "1089396783542",
+        appId: "1:1089396783542:web:b5a679fc50f60e851da917",
+        measurementId: "G-54ESEDW2ZZ"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+
+    // Handle form submission
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Get form values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const jobTitle = document.getElementById("jobTitle").value;
+        const company = document.getElementById("company").value;
+        const country = document.getElementById("country").value;
+        const message = document.getElementById("message").value;
+
+        if (name && email && phone && jobTitle && company && country && message) {
+            // Push new data to Firebase
+            const contactRef = push(ref(database, "contacts"));
+
+            set(contactRef, {
+                name: name,
+                email: email,
+                phone: phone,
+                jobTitle: jobTitle,
+                company: company,
+                country: country,
+                message: message,
+                timestamp: serverTimestamp()  // Store the current timestamp from the server
+            }).then(() => {
+                alert("Message Sent Successfully!");
+                document.getElementById("contactForm").reset();
+            }).catch((error) => {
+                alert("Error: " + error.message);
+            });
+        } else {
+            alert("Please fill all the fields.");
+        }
+    });
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

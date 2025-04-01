@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <title>Blog Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .blog-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .blog-card {
+            display: grid;
+            grid-template-columns: 1fr 2fr; 
+            gap: 20px;
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: scale(1.05);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+        }
+
+        .blog-card .card-body h5 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .blog-card .card-body p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-card .btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 15px; 
+            font-size: 0.875rem; 
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            align-self: flex-start; 
+        }
+
+        .blog-card .btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .blog-card {
+                grid-template-columns: 1fr; 
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="admin.html" style="font-family: 'Roboto', sans-serif; font-weight: bold;">
+                AI Solutions
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Feedback.html">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="blog-container">
+        <h2>AI Insights & Trends</h2>
+
+        <div class="blog-card">
+            <img src="ai.jpg" alt="AI in Healthcare">
+            <div class="card-body">
+                <h5>Revolutionizing Healthcare with AI</h5>
+                <p>Artificial Intelligence is transforming healthcare by improving diagnostics, personalizing treatments, and streamlining administrative tasks.</p>
+                <button class="btn" onclick="window.location.href='blog1.html'">Read More</button>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="ai.jpg" alt="AI in Finance">
+            <div class="card-body">
+                <h5>How AI is Shaping the Future of Finance</h5>
+                <p>From fraud detection to algorithmic trading, AI is revolutionizing the financial sector, making transactions more secure and efficient.</p>
+                <button class="btn" onclick="window.location.href='blog2.html'">Read More</button>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="ai.jpg" alt="AI in Retail">
+            <div class="card-body">
+                <h5>AI-Powered Retail: Enhancing Customer Experience</h5>
+                <p>Retail businesses are leveraging AI for personalized shopping experiences, inventory management, and demand forecasting.</p>
+                <button class="btn" onclick="window.location.href='blog3.html'">Read More</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 AI Solutions. All Rights Reserved.</p>
+        <p>Address: 1197, 35 Bang Na-Trat 37 Alley, Bang Na Nuea, Bang Na, Bangkok 10260</p>
+        <p>Email: <a href="mailto:aisolution@gmail.com" class="text-white">aisolution@gmail.com</a></p>
+        <p>Phone: <a href="tel:+85943894734" class="text-white">+85 943894734</a></p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
